@@ -373,26 +373,26 @@ const QB = {
       { q: 'What product is formed when an acid reacts with a metal?', o: ['Salt and water', 'Salt and hydrogen gas', 'Salt only', 'Water and carbon dioxide'], a: 1 }
     ],
     Biology: [
-      { q: 'What is the basic unit of life?', o: ['Tissue', 'Organ', 'Cell', 'Molecule'], a: 2 },
-      { q: 'What organelle is known as the powerhouse of the cell?', o: ['Nucleus', 'Ribosome', 'Mitochondria', 'Golgi body'], a: 2 },
-      { q: 'What is the process of cell division for growth?', o: ['Meiosis', 'Mitosis', 'Binary fission', 'Budding'], a: 1 },
-      { q: 'What is the largest organ in the human body?', o: ['Liver', 'Skin', 'Brain', 'Lungs'], a: 1 },
-      { q: 'What system transports blood in the body?', o: ['Nervous system', 'Respiratory system', 'Circulatory system', 'Digestive system'], a: 2 },
+      { q: 'What is the basic unit of life?', o: ['Tissue', 'Organ', 'Cell', 'Molecule'], a: 2, img: 'Animal+Cell+Diagram' },
+      { q: 'What organelle is known as the powerhouse of the cell?', o: ['Nucleus', 'Ribosome', 'Mitochondria', 'Golgi body'], a: 2, img: 'Mitochondria+Diagram' },
+      { q: 'What is the process of cell division for growth?', o: ['Meiosis', 'Mitosis', 'Binary fission', 'Budding'], a: 1, img: 'Mitosis+Cell+Division' },
+      { q: 'What is the largest organ in the human body?', o: ['Liver', 'Skin', 'Brain', 'Lungs'], a: 1, img: 'Human+Skin+Anatomy' },
+      { q: 'What system transports blood in the body?', o: ['Nervous system', 'Respiratory system', 'Circulatory system', 'Digestive system'], a: 2, img: 'Circulatory+System+Diagram' },
       { q: 'What is the function of the ribosomes?', o: ['Protein synthesis', 'Lipid synthesis', 'Energy production', 'DNA replication'], a: 0 },
       { q: 'What type of reproduction requires two parents?', o: ['Asexual', 'Sexual', 'Budding', 'Fission'], a: 1 },
-      { q: 'What is the green pigment in plants called?', o: ['Carotene', 'Chlorophyll', 'Xanthophyll', 'Anthocyanin'], a: 1 },
-      { q: 'What is the study of heredity called?', o: ['Ecology', 'Genetics', 'Evolution', 'Taxonomy'], a: 1 },
-      { q: 'What is the function of the nervous system?', o: ['Digest food', 'Coordinate response to stimuli', 'Pump blood', 'Exchange gases'], a: 1 },
-      { q: 'How many chambers does the human heart have?', o: ['2', '3', '4', '5'], a: 2 },
-      { q: 'What is the main function of the root system?', o: ['Photosynthesis', 'Support and absorption', 'Reproduction', 'Transpiration'], a: 1 },
+      { q: 'What is the green pigment in plants called?', o: ['Carotene', 'Chlorophyll', 'Xanthophyll', 'Anthocyanin'], a: 1, img: 'Chloroplast+in+Plant+Cell' },
+      { q: 'What is the study of heredity called?', o: ['Ecology', 'Genetics', 'Evolution', 'Taxonomy'], a: 1, img: 'DNA+Double+Helix' },
+      { q: 'What is the function of the nervous system?', o: ['Digest food', 'Coordinate response to stimuli', 'Pump blood', 'Exchange gases'], a: 1, img: 'Nervous+System+Diagram' },
+      { q: 'How many chambers does the human heart have?', o: ['2', '3', '4', '5'], a: 2, img: 'Human+Heart+Chambers' },
+      { q: 'What is the main function of the root system?', o: ['Photosynthesis', 'Support and absorption', 'Reproduction', 'Transpiration'], a: 1, img: 'Plant+Root+Structure' },
       { q: 'What is an ecosystem?', o: ['A single organism', 'Interacting organisms and their environment', 'Only plants in an area', 'Only animals in an area'], a: 1 },
-      { q: 'What is the liquid part of blood called?', o: ['Plasma', 'Serum', 'Cytosol', 'Lymph'], a: 0 },
-      { q: 'What is the process by which plants lose water vapor?', o: ['Photosynthesis', 'Respiration', 'Transpiration', 'Guttation'], a: 2 },
+      { q: 'What is the liquid part of blood called?', o: ['Plasma', 'Serum', 'Cytosol', 'Lymph'], a: 0, img: 'Blood+Components+Diagram' },
+      { q: 'What is the process by which plants lose water vapor?', o: ['Photosynthesis', 'Respiration', 'Transpiration', 'Guttation'], a: 2, img: 'Transpiration+in+Plants' },
       { q: 'What is the function of white blood cells?', o: ['Carry oxygen', 'Fight infection', 'Clot blood', 'Carry nutrients'], a: 1 },
-      { q: 'What is the structural unit of the nervous system?', o: ['Axon', 'Neuron', 'Dendrite', 'Synapse'], a: 1 },
-      { q: 'What type of symmetry does a starfish have?', o: ['Bilateral', 'Radial', 'Asymmetry', 'Spherical'], a: 1 },
+      { q: 'What is the structural unit of the nervous system?', o: ['Axon', 'Neuron', 'Dendrite', 'Synapse'], a: 1, img: 'Neuron+Structure' },
+      { q: 'What type of symmetry does a starfish have?', o: ['Bilateral', 'Radial', 'Asymmetry', 'Spherical'], a: 1, img: 'Starfish+Body+Symmetry' },
       { q: 'What is the main male reproductive hormone?', o: ['Estrogen', 'Progesterone', 'Testosterone', 'Adrenaline'], a: 2 },
-      { q: 'What is the powerhouse of the cell?', o: ['Nucleus', 'Mitochondria', 'Chloroplast', 'Ribosome'], a: 1 }
+      { q: 'What is the powerhouse of the cell?', o: ['Nucleus', 'Mitochondria', 'Chloroplast', 'Ribosome'], a: 1, img: 'Mitochondria+Structure' }
     ]
   },
 
@@ -465,22 +465,22 @@ const QB = {
     ],
     Biology: [
       { q: 'What is the function of tRNA?', o: ['Carries amino acids to ribosomes', 'Carries genetic code', 'Forms ribosomes', 'Replicates DNA'], a: 0 },
-      { q: 'What is the number of chromosomes in a human cell?', o: ['23', '46', '48', '24'], a: 1 },
-      { q: 'What is a mutation?', o: ['Change in DNA sequence', 'Cell division', 'Protein synthesis', 'Energy production'], a: 0 },
+      { q: 'What is the number of chromosomes in a human cell?', o: ['23', '46', '48', '24'], a: 1, img: 'Human+Karyotype+Chromosomes' },
+      { q: 'What is a mutation?', o: ['Change in DNA sequence', 'Cell division', 'Protein synthesis', 'Energy production'], a: 0, img: 'DNA+Mutation+Diagram' },
       { q: 'What is an allele?', o: ['A type of chromosome', 'Alternative form of a gene', 'A protein', 'A cell organelle'], a: 1 },
       { q: 'What is the theory of natural selection associated with?', o: ['Lamarck', 'Darwin', 'Mendel', 'Linnaeus'], a: 1 },
       { q: 'What is the percentage of water in human blood?', o: ['55%', '65%', '75%', '85%'], a: 2 },
       { q: 'What is the role of decomposers in an ecosystem?', o: ['Produce food', 'Break down dead matter', 'Hunt prey', 'Pollinate flowers'], a: 1 },
-      { q: 'What is the name of the double membrane around the nucleus?', o: ['Cell wall', 'Nuclear envelope', 'Plasma membrane', 'Endoplasmic reticulum'], a: 1 },
-      { q: 'What is the function of the small intestine?', o: ['Absorb water', 'Digest and absorb nutrients', 'Store food', 'Produce bile'], a: 1 },
-      { q: 'What is the process of making mRNA from DNA?', o: ['Translation', 'Transcription', 'Replication', 'Transformation'], a: 1 },
-      { q: 'What is an artery?', o: ['Carries blood to the heart', 'Carries blood away from heart', 'Carries deoxygenated blood', 'Thin-walled vessel'], a: 1 },
-      { q: 'What is the shape of DNA?', o: ['Single helix', 'Double helix', 'Triple helix', 'Circular'], a: 1 },
-      { q: 'What is a trophic level?', o: ['A feeding level in an ecosystem', 'A type of organism', 'A chemical cycle', 'A habitat'], a: 0 },
-      { q: 'What is the function of the pancreas?', o: ['Produces insulin and digestive enzymes', 'Filters blood', 'Produces bile', 'Stores glycogen'], a: 0 },
-      { q: 'What is a vestigial organ?', o: ['A vital organ', 'A reduced organ with no apparent function', 'An organ only in embryos', 'A sensory organ'], a: 1 },
-      { q: 'What is the function of the alveoli?', o: ['Digestion', 'Gas exchange', 'Blood filtration', 'Bile production'], a: 1 },
-      { q: 'What is the genotype of a carrier for sickle cell trait?', o: ['AA', 'AS', 'SS', 'AC'], a: 1 },
+      { q: 'What is the name of the double membrane around the nucleus?', o: ['Cell wall', 'Nuclear envelope', 'Plasma membrane', 'Endoplasmic reticulum'], a: 1, img: 'Cell+Nucleus+Membrane' },
+      { q: 'What is the function of the small intestine?', o: ['Absorb water', 'Digest and absorb nutrients', 'Store food', 'Produce bile'], a: 1, img: 'Small+Intestine+Diagram' },
+      { q: 'What is the process of making mRNA from DNA?', o: ['Translation', 'Transcription', 'Replication', 'Transformation'], a: 1, img: 'DNA+Transcription+Process' },
+      { q: 'What is an artery?', o: ['Carries blood to the heart', 'Carries blood away from heart', 'Carries deoxygenated blood', 'Thin-walled vessel'], a: 1, img: 'Artery+Cross+Section' },
+      { q: 'What is the shape of DNA?', o: ['Single helix', 'Double helix', 'Triple helix', 'Circular'], a: 1, img: 'DNA+Double+Helix+Model' },
+      { q: 'What is a trophic level?', o: ['A feeding level in an ecosystem', 'A type of organism', 'A chemical cycle', 'A habitat'], a: 0, img: 'Trophic+Level+Pyramid' },
+      { q: 'What is the function of the pancreas?', o: ['Produces insulin and digestive enzymes', 'Filters blood', 'Produces bile', 'Stores glycogen'], a: 0, img: 'Pancreas+Anatomy+Diagram' },
+      { q: 'What is a vestigial organ?', o: ['A vital organ', 'A reduced organ with no apparent function', 'An organ only in embryos', 'A sensory organ'], a: 1, img: 'Vestigial+Organs+Examples' },
+      { q: 'What is the function of the alveoli?', o: ['Digestion', 'Gas exchange', 'Blood filtration', 'Bile production'], a: 1, img: 'Alveoli+Gas+Exchange' },
+      { q: 'What is the genotype of a carrier for sickle cell trait?', o: ['AA', 'AS', 'SS', 'AC'], a: 1, img: 'Sickle+Cell+Trait+Genetics' },
       { q: 'What is the primary source of energy for ecosystems?', o: ['Water', 'Sun', 'Soil', 'Air'], a: 1 },
       { q: 'What is mitosis?', o: ['Cell division for gametes', 'Cell division for growth and repair', 'Cell death', 'Cell specialization'], a: 1 },
       { q: 'What is the function of chlorophyll?', o: ['Absorb light energy', 'Produce oxygen', 'Fix carbon dioxide', 'Transport water'], a: 0 }
@@ -555,26 +555,26 @@ const QB = {
       { q: 'What is the hybridization in ethene?', o: ['sp', 'sp\u00b2', 'sp\u00b3', 'sp\u00b3d'], a: 1 }
     ],
     Biology: [
-      { q: 'What is the endocrine system?', o: ['Nervous system', 'Glands that secrete hormones', 'Digestive system', 'Excretory system'], a: 1 },
+      { q: 'What is the endocrine system?', o: ['Nervous system', 'Glands that secrete hormones', 'Digestive system', 'Excretory system'], a: 1, img: 'Endocrine+System+Glands' },
       { q: 'What is positive feedback in homeostasis?', o: ['Amplifies a change', 'Reverses a change', 'Maintains constant condition', 'Reduces deviation'], a: 0 },
-      { q: 'What is the role of the pituitary gland?', o: ['Master gland controlling other glands', 'Regulates metabolism', 'Produces adrenaline', 'Controls digestion'], a: 0 },
+      { q: 'What is the role of the pituitary gland?', o: ['Master gland controlling other glands', 'Regulates metabolism', 'Produces adrenaline', 'Controls digestion'], a: 0, img: 'Pituitary+Gland+Location' },
       { q: 'What is a hormone?', o: ['A chemical messenger', 'A nerve signal', 'A protein only', 'A type of enzyme'], a: 0 },
       { q: 'What is the function of insulin?', o: ['Increase blood sugar', 'Decrease blood sugar', 'Digest fats', 'Produce urine'], a: 1 },
-      { q: 'What is the structure of a leaf adapted for?', o: ['Photosynthesis', 'Reproduction', 'Storage', 'Support'], a: 0 },
-      { q: 'What are xerophytes adapted to?', o: ['Dry conditions', 'Wet conditions', 'Cold conditions', 'Salty conditions'], a: 0 },
-      { q: 'What is succession in ecology?', o: ['Change in species over time', 'Food chain', 'Predator-prey relationship', 'Symbiosis'], a: 0 },
+      { q: 'What is the structure of a leaf adapted for?', o: ['Photosynthesis', 'Reproduction', 'Storage', 'Support'], a: 0, img: 'Leaf+Cross+Section+Diagram' },
+      { q: 'What are xerophytes adapted to?', o: ['Dry conditions', 'Wet conditions', 'Cold conditions', 'Salty conditions'], a: 0, img: 'Xerophyte+Cactus+Adaptation' },
+      { q: 'What is succession in ecology?', o: ['Change in species over time', 'Food chain', 'Predator-prey relationship', 'Symbiosis'], a: 0, img: 'Ecological+Succession+Stages' },
       { q: 'What is a climax community?', o: ['Final stable community', 'First species to colonize', 'Group of predators', 'Decomposer community'], a: 0 },
       { q: 'What is a gene pool?', o: ['Total genetic information in a population', 'Collection of genes in a lab', 'All alleles in a single organism', 'DNA of a species'], a: 0 },
-      { q: 'What is genetic drift?', o: ['Random change in allele frequency', 'Natural selection', 'Gene flow', 'Mutation rate'], a: 0 },
-      { q: 'What is the process of bone formation called?', o: ['Ossification', 'Calcification', 'Osteogenesis', 'Mineralization'], a: 0 },
-      { q: 'What is the function of myelin sheath?', o: ['Insulate nerve fibers', 'Transmit signals', 'Produce energy', 'Synthesize proteins'], a: 0 },
-      { q: 'What is the main pigment in human skin?', o: ['Keratin', 'Melanin', 'Carotene', 'Hemoglobin'], a: 1 },
-      { q: 'What is the function of the placenta?', o: ['Exchange nutrients and waste', 'Produce hormones', 'Protect fetus', 'All of the above'], a: 3 },
-      { q: 'What is the structure responsible for hearing?', o: ['Cochlea', 'Semicircular canals', 'Eardrum', 'Eustachian tube'], a: 0 },
-      { q: 'What is the role of the lymph nodes?', o: ['Filter pathogens', 'Produce red blood cells', 'Digest fats', 'Store minerals'], a: 0 },
-      { q: 'What is the function of the cerebellum?', o: ['Balance and coordination', 'Memory', 'Speech', 'Vision'], a: 0 },
+      { q: 'What is genetic drift?', o: ['Random change in allele frequency', 'Natural selection', 'Gene flow', 'Mutation rate'], a: 0, img: 'Genetic+Drift+Population' },
+      { q: 'What is the process of bone formation called?', o: ['Ossification', 'Calcification', 'Osteogenesis', 'Mineralization'], a: 0, img: 'Bone+Ossification+Process' },
+      { q: 'What is the function of myelin sheath?', o: ['Insulate nerve fibers', 'Transmit signals', 'Produce energy', 'Synthesize proteins'], a: 0, img: 'Myelin+Sheath+Neuron' },
+      { q: 'What is the main pigment in human skin?', o: ['Keratin', 'Melanin', 'Carotene', 'Hemoglobin'], a: 1, img: 'Melanin+Skin+Pigment' },
+      { q: 'What is the function of the placenta?', o: ['Exchange nutrients and waste', 'Produce hormones', 'Protect fetus', 'All of the above'], a: 3, img: 'Placenta+Structure+Diagram' },
+      { q: 'What is the structure responsible for hearing?', o: ['Cochlea', 'Semicircular canals', 'Eardrum', 'Eustachian tube'], a: 0, img: 'Cochlea+Inner+Ear+Anatomy' },
+      { q: 'What is the role of the lymph nodes?', o: ['Filter pathogens', 'Produce red blood cells', 'Digest fats', 'Store minerals'], a: 0, img: 'Lymphatic+System+Diagram' },
+      { q: 'What is the function of the cerebellum?', o: ['Balance and coordination', 'Memory', 'Speech', 'Vision'], a: 0, img: 'Cerebellum+Brain+Function' },
       { q: 'What is the process of gamete formation called?', o: ['Gametogenesis', 'Mitosis', 'Fertilization', 'Embryogenesis'], a: 0 },
-      { q: 'What is the function of ATP?', o: ['Energy currency of the cell', 'Genetic material', 'Structural component', 'Enzyme catalyst'], a: 0 }
+      { q: 'What is the function of ATP?', o: ['Energy currency of the cell', 'Genetic material', 'Structural component', 'Enzyme catalyst'], a: 0, img: 'ATP+Energy+Molecule' }
     ]
   }
 }
@@ -598,6 +598,7 @@ const dom = {
   progressFill: $('#progress-fill'),
   questionCounter: $('#question-counter'),
   questionText: $('#question-text'),
+  questionCard: $('#question-text').parentElement,
   optionsContainer: $('#options-container'),
   btnPrev: $('#btn-prev'),
   btnNext: $('#btn-next'),
@@ -731,6 +732,13 @@ function startTest() {
   startTimer()
 }
 
+// ===== IMAGE HELPER =====
+function imgHTML(q) {
+  if (!q.img) return ''
+  const src = `https://placehold.co/600x320/e8f0fe/1a73e8?text=${encodeURIComponent(q.img)}`
+  return `<div class="question-image"><img src="${src}" alt="${q.img}" loading="lazy"></div>`
+}
+
 // ===== TEST ENGINE =====
 function renderQuestion() {
   const idx = state.currentIndex
@@ -740,6 +748,13 @@ function renderQuestion() {
 
   dom.questionCounter.textContent = `Question ${idx + 1} of ${total}`
   dom.progressFill.style.width = `${((idx + 1) / total) * 100}%`
+
+  const imgEl = dom.questionCard.querySelector('.question-image')
+  if (imgEl) imgEl.remove()
+  if (q.img) {
+    dom.questionCard.insertAdjacentHTML('afterbegin', imgHTML(q))
+  }
+
   dom.questionText.textContent = q.q
 
   dom.optionsContainer.innerHTML = ''
@@ -861,6 +876,7 @@ function finishTest() {
     const div = document.createElement('div')
     div.className = `review-item ${isCorrect ? 'correct' : 'wrong'}`
     div.innerHTML = `
+      ${imgHTML(q)}
       <div class="q">Q${i + 1}: ${q.q}</div>
       <div class="a">Your answer: <span class="highlight">${userAns !== undefined ? LETTERS[userAns] + '. ' + q.o[userAns] : 'Not answered'}</span></div>
       ${!isCorrect ? `<div class="a">Correct answer: <span class="highlight">${LETTERS[q.a]}. ${q.o[q.a]}</span></div>` : ''}
@@ -934,6 +950,7 @@ function viewHistoryItem(index) {
     const div = document.createElement('div')
     div.className = `review-item ${isCorrect ? 'correct' : 'wrong'}`
     div.innerHTML = `
+      ${imgHTML(q)}
       <div class="q">Q${i + 1}: ${q.q}</div>
       <div class="a">Your answer: <span class="highlight">${userAns !== undefined ? LETTERS[userAns] + '. ' + q.o[userAns] : 'Not answered'}</span></div>
       ${!isCorrect ? `<div class="a">Correct answer: <span class="highlight">${LETTERS[q.a]}. ${q.o[q.a]}</span></div>` : ''}

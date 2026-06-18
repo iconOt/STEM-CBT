@@ -585,6 +585,30 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Question image */
+.question-image {
+  margin: -24px calc(-1 * var(--list-inset)) 18px;
+  background: var(--ios-bg);
+  overflow: hidden;
+}
+
+.question-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Review image */
+.review-item .question-image {
+  margin: -14px calc(-1 * var(--list-inset)) 10px;
+  border-radius: 0;
+}
+
+.review-item .question-image img {
+  border-radius: 8px;
+}
+
 /* ============================================================
    OPTIONS (iOS Radio Button Style)
    ============================================================ */
