@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>STEM CBT Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="safe-area-top"></div>
+
+    <!-- ===== LOGIN ===== -->
+    <div id="screen-login" class="screen active">
+      <div class="login-bg"></div>
+      <div class="container">
+        <div class="login-brand">
+          <div class="logo">STEM<sub>CBT</sub></div>
+          <p class="tagline">Practice. Learn. Excel.</p>
+        </div>
+        <form id="login-form" class="login-form">
+          <div class="ios-list-group">
+            <div class="ios-list-item ios-list-item-input">
+              <input type="text" id="student-name" placeholder="Enter your full name" autocomplete="off" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-pill">Get Started</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== DASHBOARD ===== -->
+    <div id="screen-dashboard" class="screen">
+      <header class="nav-header">
+        <div class="nav-title">
+          <h1 id="display-name">Student</h1>
+          <span class="nav-subtitle">STEM CBT Practice</span>
+        </div>
+        <button id="btn-logout" class="nav-btn" title="Reset Student">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </header>
+      <div class="container">
+        <div class="ios-section">
+          <div class="ios-section-header">Test Setup</div>
+          <div class="ios-list-group">
+            <div class="ios-list-item ios-list-item-select">
+              <label for="class-select">Class</label>
+              <select id="class-select">
+                <option value="">Choose</option>
+                <option value="JSS1">JSS 1</option>
+                <option value="JSS2">JSS 2</option>
+                <option value="JSS3">JSS 3</option>
+                <option value="SSS1">SSS 1</option>
+                <option value="SSS2">SSS 2</option>
+                <option value="SSS3">SSS 3</option>
+              </select>
+              <span class="chevron"></span>
+            </div>
+            <div class="ios-list-item ios-list-item-select">
+              <label for="subject-select">Subject</label>
+              <select id="subject-select" disabled>
+                <option value="">Choose class first</option>
+              </select>
+              <span class="chevron"></span>
+            </div>
+            <div class="ios-list-item ios-list-item-select">
+              <label>Questions</label>
+              <div class="ios-picker" id="question-count-picker">
+                <span class="ios-picker-option" data-value="5">5</span>
+                <span class="ios-picker-option selected" data-value="10">10</span>
+                <span class="ios-picker-option" data-value="15">15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="btn-start" class="btn btn-primary btn-pill" disabled>Start Test</button>
+
+        <div class="ios-section">
+          <div class="ios-section-header">Performance</div>
+          <div class="ios-list-group" id="stats-summary">
+            <p class="empty-state">Complete a test to see your stats.</p>
+          </div>
+        </div>
+
+        <div class="ios-section">
+          <div class="ios-section-header">History</div>
+          <div class="ios-list-group">
+            <button id="btn-history" class="ios-list-item ios-list-item-action">
+              <span>View Test History</span>
+              <span class="chevron"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TEST ===== -->
+    <div id="screen-test" class="screen">
+      <header class="nav-header">
+        <div class="nav-title">
+          <span id="test-subject-display" class="test-label">Subject</span>
+          <span class="nav-subtitle" id="test-class-display">Class</span>
+        </div>
+        <div class="header-right">
+          <span class="timer" id="timer-display">10:00</span>
+        </div>
+      </header>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="container">
+        <div class="question-chip" id="question-counter">Question 1 of 10</div>
+        <div class="card question-card">
+          <div class="question-text" id="question-text">Loading...</div>
+          <div class="options" id="options-container"></div>
+        </div>
+        <div class="nav-buttons">
+          <button id="btn-prev" class="btn btn-secondary" disabled>← Previous</button>
+          <button id="btn-next" class="btn btn-primary btn-pill">Next →</button>
+        </div>
+        <button id="btn-submit" class="btn btn-primary btn-pill btn-submit" style="display:none;">Submit Test</button>
+      </div>
+    </div>
+
+    <!-- ===== RESULT ===== -->
+    <div id="screen-result" class="screen">
+      <header class="nav-header">
+        <div class="nav-title">
+          <h1>Test Result</h1>
+        </div>
+      </header>
+      <div class="container">
+        <div class="card result-card">
+          <div class="score-circle" id="score-circle">
+            <span class="score-number" id="score-number">0%</span>
+          </div>
+          <div class="score-details">
+            <div class="score-detail-row"><span class="sd-label">Subject</span><span class="sd-value" id="result-subject"></span></div>
+            <div class="score-detail-row"><span class="sd-label">Class</span><span class="sd-value" id="result-class"></span></div>
+            <div class="score-detail-row"><span class="sd-label">Score</span><span class="sd-value" id="result-score"></span></div>
+            <div class="score-detail-row"><span class="sd-label">Time</span><span class="sd-value" id="result-time"></span></div>
+          </div>
+          <div class="result-status" id="result-status"></div>
+        </div>
+
+        <div class="ios-section">
+          <div class="ios-section-header">Review Answers</div>
+          <div class="ios-list-group" id="review-container"></div>
+        </div>
+
+        <div class="result-actions">
+          <button id="btn-retake" class="btn btn-primary btn-pill">Retake Test</button>
+          <button id="btn-back-dashboard" class="btn btn-secondary btn-pill">Back to Dashboard</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HISTORY ===== -->
+    <div id="screen-history" class="screen">
+      <header class="nav-header">
+        <button id="btn-back-dashboard-2" class="nav-btn nav-back-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="nav-title">
+          <h1>Test History</h1>
+        </div>
+      </header>
+      <div class="container">
+        <div class="ios-section">
+          <div class="ios-list-group" id="history-container">
+            <p class="empty-state">No tests taken yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safe-area-bottom"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

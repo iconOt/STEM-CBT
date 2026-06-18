@@ -1,0 +1,988 @@
+/* ============================================================
+   STEM CBT — iOS 17 Inspired Design System
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* iOS System Colors */
+  --ios-blue: #007aff;
+  --ios-blue-dark: #0062cc;
+  --ios-green: #34c759;
+  --ios-red: #ff3b30;
+  --ios-orange: #ff9500;
+  --ios-yellow: #ffcc00;
+  --ios-teal: #5ac8fa;
+
+  /* iOS UI Colors */
+  --ios-bg: #f2f2f7;
+  --ios-card-bg: #ffffff;
+  --ios-separator: #c6c6c8;
+  --ios-separator-light: #e5e5ea;
+  --ios-label: #1c1c1e;
+  --ios-secondary-label: #8e8e93;
+  --ios-tertiary-label: #c7c7cc;
+  --ios-quaternary-label: #d1d1d6;
+  --ios-fill: #78788033;
+  --ios-system-background: #ffffff;
+
+  /* Typography */
+  --ios-large-title: 34px;
+  --ios-title-1: 28px;
+  --ios-title-2: 22px;
+  --ios-title-3: 20px;
+  --ios-headline: 17px;
+  --ios-body: 17px;
+  --ios-callout: 16px;
+  --ios-subhead: 15px;
+  --ios-footnote: 13px;
+  --ios-caption: 12px;
+
+  /* Spacing */
+  --section-spacing: 20px;
+  --list-inset: 16px;
+
+  /* Misc */
+  --ios-radius: 10px;
+  --ios-radius-lg: 13px;
+  --ios-radius-xl: 20px;
+  --ios-transition: 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== BASE ===== */
+html {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  background: var(--ios-bg);
+  color: var(--ios-label);
+  line-height: 1.47059;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--ios-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== SAFE AREA ===== */
+.safe-area-top {
+  height: env(safe-area-inset-top, 0px);
+  background: var(--ios-bg);
+}
+.safe-area-bottom {
+  height: env(safe-area-inset-bottom, 16px);
+}
+
+/* ===== SCREENS ===== */
+.screen {
+  display: none;
+}
+.screen.active {
+  display: block;
+  animation: iosFadeIn 0.3s ease;
+}
+
+@keyframes iosFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  padding: 0 var(--list-inset) var(--list-inset);
+}
+
+/* ============================================================
+   iOS GROUPED LIST
+   ============================================================ */
+.ios-section {
+  margin-bottom: var(--section-spacing);
+}
+
+.ios-section-header {
+  font-size: var(--ios-footnote);
+  font-weight: 400;
+  color: var(--ios-secondary-label);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0 var(--list-inset);
+  margin-bottom: 6px;
+  margin-top: 24px;
+}
+
+.ios-section:first-child .ios-section-header {
+  margin-top: 4px;
+}
+
+.ios-list-group {
+  background: var(--ios-card-bg);
+  border-radius: var(--ios-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 0 0.5px rgba(0,0,0,0.04);
+}
+
+/* ===== LIST ITEMS ===== */
+.ios-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 6px var(--list-inset);
+  position: relative;
+  background: var(--ios-card-bg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ios-list-item + .ios-list-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--list-inset);
+  right: 0;
+  height: 0.5px;
+  background: var(--ios-separator-light);
+  transform: scaleY(0.5);
+}
+
+/* Select list items */
+.ios-list-item-select {
+  cursor: pointer;
+}
+
+.ios-list-item-select label {
+  font-size: var(--ios-body);
+  color: var(--ios-label);
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+.ios-list-item-select select {
+  flex: 1;
+  font-size: var(--ios-body);
+  font-family: inherit;
+  color: var(--ios-secondary-label);
+  background: var(--ios-card-bg);
+  border: none;
+  outline: none;
+  text-align: right;
+  padding: 8px 0;
+  -webkit-appearance: none;
+  appearance: none;
+  direction: rtl;
+  cursor: pointer;
+}
+
+/* Option elements inside the select */
+.ios-list-item-select select option {
+  direction: ltr;
+  color: var(--ios-label);
+  background: var(--ios-card-bg);
+  padding: 8px;
+  font-size: var(--ios-body);
+}
+
+.ios-list-item-select select option:checked {
+  background: var(--ios-blue);
+  color: #fff;
+}
+
+.ios-list-item-select select option:hover {
+  background: var(--ios-bg);
+}
+
+/* WebKit dropdown popup container */
+.ios-list-item-select select::-webkit-listbox {
+  background: var(--ios-card-bg);
+  border: none;
+  padding: 4px;
+}
+
+.ios-list-item-select select:disabled {
+  color: var(--ios-tertiary-label);
+}
+
+.ios-list-item-select select:not(:disabled) {
+  color: var(--ios-label);
+}
+
+/* Chevron */
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chevron::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: solid var(--ios-tertiary-label);
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+}
+
+/* Action list item (button) */
+.ios-list-item-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background: var(--ios-card-bg);
+  font-family: inherit;
+  font-size: var(--ios-body);
+  color: var(--ios-label);
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  padding: 12px var(--list-inset);
+  transition: background 0.15s ease;
+}
+
+.ios-list-item-action:active {
+  background: #d9d9d9;
+}
+
+.ios-list-item-input {
+  padding: 4px var(--list-inset);
+}
+
+.ios-list-item-input input {
+  width: 100%;
+  font-size: var(--ios-body);
+  font-family: inherit;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--ios-label);
+}
+
+.ios-list-item-input input::placeholder {
+  color: var(--ios-tertiary-label);
+}
+
+/* ============================================================
+   SEGMENTED PICKER (iOS Style)
+   ============================================================ */
+.ios-picker {
+  display: flex;
+  background: var(--ios-bg);
+  border-radius: 8px;
+  padding: 2px;
+  flex: 1;
+  max-width: 200px;
+  margin-left: auto;
+}
+
+.ios-picker-option {
+  flex: 1;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: var(--ios-subhead);
+  font-weight: 500;
+  color: var(--ios-secondary-label);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ios-picker-option.selected {
+  background: var(--ios-card-bg);
+  color: var(--ios-label);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  color: var(--ios-secondary-label);
+  text-align: center;
+  padding: 20px 16px;
+  font-size: var(--ios-footnote);
+}
+
+/* ============================================================
+   BUTTONS (iOS Pill Style)
+   ============================================================ */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: var(--ios-headline);
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: var(--ios-blue);
+  color: #fff;
+}
+
+.btn-primary:disabled {
+  background: var(--ios-quaternary-label);
+  color: rgba(255,255,255,0.6);
+  cursor: not-allowed;
+  transform: none;
+  opacity: 1;
+}
+
+.btn-secondary {
+  background: var(--ios-card-bg);
+  color: var(--ios-blue);
+  box-shadow: 0 0 0 0.5px rgba(0,0,0,0.08);
+}
+
+.btn-pill {
+  border-radius: 13px;
+  margin-bottom: 12px;
+}
+
+.btn-submit {
+  background: var(--ios-green);
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   NAVIGATION BAR (iOS Style)
+   ============================================================ */
+.nav-header {
+  display: flex;
+  align-items: center;
+  padding: 8px var(--list-inset);
+  background: var(--ios-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 52px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(242,242,247,0.88);
+}
+
+.nav-header .nav-title {
+  flex: 1;
+}
+
+.nav-header h1 {
+  font-size: var(--ios-title-2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ios-label);
+}
+
+.nav-subtitle {
+  font-size: var(--ios-footnote);
+  color: var(--ios-secondary-label);
+}
+
+.test-label {
+  font-size: var(--ios-headline);
+  font-weight: 600;
+  color: var(--ios-label);
+  display: block;
+}
+
+.nav-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--ios-blue);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.nav-btn:active {
+  background: rgba(0,122,255,0.12);
+}
+
+.nav-back-btn {
+  margin-right: 4px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   LOGIN SCREEN
+   ============================================================ */
+#screen-login {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #007aff 0%, #5856d6 50%, #af52de 100%);
+  opacity: 0.08;
+}
+
+.login-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, #007aff 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, #5856d6 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, #af52de 0%, transparent 50%);
+  opacity: 0.3;
+}
+
+#screen-login .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #007aff, #5856d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo sub {
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-text-fill-color: #5856d6;
+  vertical-align: super;
+}
+
+.tagline {
+  text-align: center;
+  color: var(--ios-secondary-label);
+  font-size: var(--ios-body);
+  margin-top: 8px;
+}
+
+.login-form {
+  max-width: 340px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.login-form .ios-list-group {
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+.progress-bar {
+  height: 3px;
+  background: var(--ios-separator-light);
+  margin: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 52px;
+  z-index: 9;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--ios-blue);
+  transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 0%;
+}
+
+/* ============================================================
+   QUESTION COUNTER CHIP
+   ============================================================ */
+.question-chip {
+  font-size: var(--ios-footnote);
+  font-weight: 500;
+  color: var(--ios-secondary-label);
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 4px 14px;
+  background: var(--ios-bg);
+  border-radius: 20px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   CARD
+   ============================================================ */
+.card {
+  background: var(--ios-card-bg);
+  border-radius: var(--ios-radius-lg);
+  box-shadow: 0 0 0 0.5px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+/* ============================================================
+   QUESTION
+   ============================================================ */
+.question-card {
+  padding: 24px var(--list-inset) 20px;
+  margin-bottom: 14px;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  color: var(--ios-label);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   OPTIONS (iOS Radio Button Style)
+   ============================================================ */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--ios-separator-light);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: var(--ios-body);
+  background: var(--ios-card-bg);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.option:active {
+  transform: scale(0.985);
+}
+
+.option.selected {
+  border-color: var(--ios-blue);
+  background: #007aff08;
+}
+
+.option .letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--ios-bg);
+  font-weight: 600;
+  font-size: var(--ios-footnote);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.option.selected .letter {
+  background: var(--ios-blue);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+}
+
+/* ============================================================
+   NAV BUTTONS
+   ============================================================ */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.nav-buttons .btn {
+  padding: 14px;
+  font-size: var(--ios-callout);
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+.timer {
+  font-size: var(--ios-headline);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: var(--ios-fill);
+  padding: 6px 14px;
+  border-radius: 9px;
+  letter-spacing: 0.5px;
+  color: var(--ios-label);
+  transition: all 0.3s ease;
+}
+
+.timer.warning {
+  color: var(--ios-orange);
+  background: rgba(255,149,0,0.12);
+}
+
+.timer.danger {
+  color: var(--ios-red);
+  background: rgba(255,59,48,0.12);
+  animation: iosPulse 1s ease-in-out infinite;
+}
+
+@keyframes iosPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* ============================================================
+   RESULT SCREEN
+   ============================================================ */
+.result-card {
+  text-align: center;
+  padding: 32px var(--list-inset) 24px;
+  margin-bottom: var(--section-spacing);
+  margin-top: 8px;
+}
+
+.score-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  background: conic-gradient(var(--ios-blue) var(--score-deg, 0deg), var(--ios-bg) 0deg);
+  transition: background 0.6s ease;
+}
+
+.score-number {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--ios-card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--ios-label);
+  letter-spacing: -0.02em;
+}
+
+.score-details {
+  padding: 0 8px;
+}
+
+.score-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: var(--ios-callout);
+}
+
+.score-detail-row + .score-detail-row {
+  border-top: 0.5px solid var(--ios-separator-light);
+}
+
+.score-detail-row .sd-label {
+  color: var(--ios-secondary-label);
+}
+
+.score-detail-row .sd-value {
+  font-weight: 600;
+  color: var(--ios-label);
+}
+
+.result-status {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+.result-status.pass {
+  color: var(--ios-green);
+}
+
+.result-status.fail {
+  color: var(--ios-red);
+}
+
+/* ============================================================
+   REVIEW ITEMS
+   ============================================================ */
+.review-item {
+  padding: 14px var(--list-inset);
+  font-size: var(--ios-subhead);
+  position: relative;
+}
+
+.review-item + .review-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--list-inset);
+  right: 0;
+  height: 0.5px;
+  background: var(--ios-separator-light);
+  transform: scaleY(0.5);
+}
+
+.review-item.correct {
+  background: #34c75908;
+}
+
+.review-item.wrong {
+  background: #ff3b3008;
+}
+
+.review-item .q {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ios-label);
+}
+
+.review-item .a {
+  color: var(--ios-secondary-label);
+  font-size: var(--ios-footnote);
+}
+
+.review-item .a + .a {
+  margin-top: 2px;
+}
+
+.review-item .a .highlight {
+  font-weight: 600;
+}
+
+.review-item.correct .a .highlight {
+  color: var(--ios-green);
+}
+
+.review-item.wrong .a .highlight {
+  color: var(--ios-red);
+}
+
+/* ============================================================
+   RESULT ACTIONS
+   ============================================================ */
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   HISTORY ITEMS
+   ============================================================ */
+.history-item {
+  padding: 14px var(--list-inset);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.history-item + .history-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--list-inset);
+  right: 0;
+  height: 0.5px;
+  background: var(--ios-separator-light);
+  transform: scaleY(0.5);
+}
+
+.history-item:active {
+  background: #d9d9d9;
+}
+
+.history-item .h-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-item .h-subject {
+  font-weight: 600;
+  font-size: var(--ios-callout);
+  color: var(--ios-label);
+}
+
+.history-item .h-class {
+  font-size: var(--ios-footnote);
+  color: var(--ios-secondary-label);
+  margin-top: 1px;
+}
+
+.history-item .h-score {
+  font-weight: 700;
+  font-size: var(--ios-headline);
+}
+
+.history-item .h-score.pass {
+  color: var(--ios-green);
+}
+
+.history-item .h-score.fail {
+  color: var(--ios-red);
+}
+
+.history-item .h-date {
+  font-size: var(--ios-caption);
+  color: var(--ios-tertiary-label);
+  margin-top: 6px;
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+#stats-summary .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px var(--list-inset);
+  font-size: var(--ios-callout);
+  position: relative;
+}
+
+#stats-summary .stat-row + .stat-row::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--list-inset);
+  right: 0;
+  height: 0.5px;
+  background: var(--ios-separator-light);
+  transform: scaleY(0.5);
+}
+
+#stats-summary .stat-row .stat-label {
+  color: var(--ios-secondary-label);
+}
+
+#stats-summary .stat-row .stat-value {
+  font-weight: 600;
+  color: var(--ios-label);
+}
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.hidden {
+  display: none !important;
+}
+
+/* ============================================================
+   TABLET / DESKTOP
+   ============================================================ */
+@media (min-width: 640px) {
+  #app {
+    border-left: 0.5px solid var(--ios-separator-light);
+    border-right: 0.5px solid var(--ios-separator-light);
+    box-shadow: 0 0 20px rgba(0,0,0,0.04);
+  }
+}
+
+/* ============================================================
+   DARK MODE (optional, respects system setting)
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ios-bg: #1c1c1e;
+    --ios-card-bg: #2c2c2e;
+    --ios-separator: #38383a;
+    --ios-separator-light: #38383a;
+    --ios-label: #ffffff;
+    --ios-secondary-label: #8e8e93;
+    --ios-tertiary-label: #636366;
+    --ios-quaternary-label: #48484a;
+    --ios-fill: #78788052;
+  }
+
+  .nav-header {
+    background: rgba(28,28,30,0.92);
+  }
+
+  .login-bg {
+    opacity: 0.15;
+  }
+
+  .option.selected {
+    background: #007aff15;
+  }
+
+  .review-item.correct {
+    background: #34c75912;
+  }
+
+  .review-item.wrong {
+    background: #ff3b3012;
+  }
+
+  .history-item:active,
+  .ios-list-item-action:active {
+    background: #3a3a3c;
+  }
+
+  .ios-picker {
+    background: #1c1c1e;
+  }
+
+  .ios-picker-option.selected {
+    background: #2c2c2e;
+  }
+}
