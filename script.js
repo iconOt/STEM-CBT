@@ -6,7 +6,7 @@ const $ = (s, c = document) => c.querySelector(s)
 const $$ = (s, c = document) => [...c.querySelectorAll(s)]
 
 const LETTERS = ['A', 'B', 'C', 'D']
-
+ 
 // ===== STATE =====
 const state = {
   screen: 'login',
